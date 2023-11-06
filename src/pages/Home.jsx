@@ -766,7 +766,7 @@ function Home({ collect }) {
       <ToastContainer
       position="top-center"
       width={"100%"}
-      autoClose={4000}
+      autoClose={2000}
       theme="dark"
       />
     </div>

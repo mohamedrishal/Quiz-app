@@ -20,14 +20,14 @@ function Result({score,questionNumber,name}) {
             <h4>Quiz Completed successfully</h4>
             <p className="fs-5 p-4 w-75">You attempt <span className="text-primary">10 questions</span> and from that <span className="text-success">{score} answers</span> is correct</p>
           </div>
-    
         </div>
-    
+
     <div>
-    <Link to={'/'} className='text-decoration-none btn btn-primary rounded px-5 p-3 d-flex align-items-center fs-5 fw-bold'>
+    <Link to={'/'} className='text-decoration-none btn btn-primary rounded px-5 p-3 d-flex align-items-center'>
     <i class="fa-solid fa-arrow-left me-3"></i> Home
     </Link>
     </div>
+    
  </div>
   );
 }

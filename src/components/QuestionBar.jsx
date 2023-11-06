@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./QuestionBar.css";
+import useSound from 'use-sound';
+import click from '../assets/click.mp3'
+import inCorrect from '../assets/incorrect.mp3'
+import correctA from '../assets/magical-hit-45356.mp3'
+
 
 function QuestionBar({
   data,
@@ -16,6 +21,11 @@ function QuestionBar({
     "animation p-3 text-center borderborder-primary fs-5 fw-bolder  rounded-2 shadow"
   );
 
+  const [letClick] = useSound(click)
+  const [letCorrect] = useSound(correctA)
+  const [letWrong] = useSound(inCorrect)
+ 
+
 
   const delay = (duration, callback) => {
     setTimeout(() => {
@@ -30,6 +40,7 @@ function QuestionBar({
   console.log(data);
 
   const handleClick = (a) => {
+    letClick();
     handlclickToast()
     setClick(true)
     setSelectedAnswer(a);
@@ -37,7 +48,7 @@ function QuestionBar({
       "animation active p-3 text-center borderborder-primary fs-5 fw-bolder  rounded-2 shadow "
     );
 
-    delay(2000, () =>
+    delay(1500, () =>
       setClassName(
         a.correct
           ? "animation  correct p-3 text-center borderborder-primary fs-5 fw-bolder  rounded-2 shadow"
@@ -45,14 +56,20 @@ function QuestionBar({
       )
     );
 
-    delay(5000, () => {
+    delay(3000, () => {
       if (a.correct) {
+        letCorrect();
+      delay(4000,()=>{
         setQuestionNumber((prev) => prev + 1);
         setSelectedAnswer(null);
         setScore((prev) => prev + 1);
+      })
       } else {
-        setQuestionNumber((prev) => prev + 1);
+        letWrong();
+        delay(4000,()=>{
+          setQuestionNumber((prev) => prev + 1);
 
+      })
         // setStop(true)
       }
     });
