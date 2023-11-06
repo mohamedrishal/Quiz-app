@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Home({ collect }) {
   // console.log(collect);
+  
 
   const [data, setData] = useState([]);
 
@@ -716,7 +717,7 @@ function Home({ collect }) {
 
   const handlclickToast = ()=>{
     if(click){
-      toast.warning("Pls wait Your Answer is Correct or Wrong...!")
+      toast.warning("Pls wait.. ✓ or ✕")
     }
   }
 
@@ -735,10 +736,10 @@ function Home({ collect }) {
           </>
         ) : (
           <>
-            <div className="top h-25  d-flex flex-column justify-content-center align-items-center">
+            <div className="top w-100 h-25  d-flex flex-column justify-content-center align-items-center">
 
               <div
-                style={{ width: "70px", height: "70px",marginTop:"10vh" }}
+                style={{ width: "70px", height: "70px",marginTop:"12vh" }}
                 className="timer border border-primary border-2 shadow d-flex align-items-center justify-content-center fs-4 fw-bolder  rounded-circle"
               >
                 <Time setStop={setStop} questionNumber={questionNumber} />
@@ -763,10 +764,10 @@ function Home({ collect }) {
         )}
       </div>
       <ToastContainer
-      className="w-25"
       position="top-center"
       width={"100%"}
       autoClose={4000}
+      theme="dark"
       />
     </div>
   );

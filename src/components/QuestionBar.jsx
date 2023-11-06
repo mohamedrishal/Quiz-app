@@ -13,7 +13,7 @@ function QuestionBar({
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState(
-    "animation p-3 text-center borderborder-primary fs-4 fw-bolder  rounded-2 shadow"
+    "animation p-3 text-center borderborder-primary fs-5 fw-bolder  rounded-2 shadow"
   );
 
 
@@ -34,14 +34,14 @@ function QuestionBar({
     setClick(true)
     setSelectedAnswer(a);
     setClassName(
-      "animation active p-3 text-center borderborder-primary fs-4 fw-bolder  rounded-2 shadow "
+      "animation active p-3 text-center borderborder-primary fs-5 fw-bolder  rounded-2 shadow "
     );
 
     delay(2000, () =>
       setClassName(
         a.correct
-          ? "animation  correct p-3 text-center borderborder-primary fs-4 fw-bolder  rounded-2 shadow"
-          : "animation  wrong p-3 text-center borderborder-primary fs-4 fw-bolder  rounded-2 shadow "
+          ? "animation  correct p-3 text-center borderborder-primary fs-5 fw-bolder  rounded-2 shadow"
+          : "animation  wrong p-3 text-center borderborder-primary fs-5 fw-bolder  rounded-2 shadow "
       )
     );
 
@@ -60,7 +60,7 @@ function QuestionBar({
 
   return (
     <div className="conatiner h-100 d-flex flex-column align-items-center justify-content-center">
-      <div className="w-75 qbar  shadow  border border-primary text-center fs-4 fw-bolder p-4">
+      <div className="w-75 qbar  shadow  border border-primary text-center fs-5 fw-bolder p-4">
         {question?.question}
       </div>
       <div className="w-100 d-flex justify-content-center flex-wrap m-5">
@@ -71,7 +71,7 @@ function QuestionBar({
             className={
               selectedAnswer === a
                 ? className
-                : "animation  shadow  p-3  text-center border border-primary fs-4 fw-bolder rounded-2"
+                : "animation  shadow  p-3  text-center border border-primary fs-5 fw-bolder rounded-2"
             }
             onClick={() => handleClick(a)}
           >
