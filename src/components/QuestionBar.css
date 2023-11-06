@@ -1,0 +1,46 @@
+.qbar{
+    background-image: linear-gradient(#0d6dfd56,rgba(255, 255, 255, 0.337));
+}
+
+.animation{
+    cursor: pointer;
+    background-image: linear-gradient(#0d6dfd56,rgba(255, 255, 255, 0.337));
+}
+.animation:hover, 
+.animation.active {
+ background: #0d6efd ;
+}
+
+.animation.correct {
+    animation: correct 3s ease forwards;
+   }
+
+@keyframes correct{
+    0%,22%,42%{
+        background: #0d6efd;
+    }
+    20%,40%,60%{
+        background-image: linear-gradient(#0d6dfd56,rgba(255, 255, 255, 0.337));
+
+    }
+    62%,100%{
+        background:rgba(0, 128, 0, 0.575) ;
+    }
+}
+
+.animation.wrong {
+    animation: wrong 3s ease forwards;
+   }
+
+@keyframes wrong{
+    0%,22%,42%{
+        background: #0d6efd;
+    }
+    20%,40%,60%{
+        background-image: linear-gradient(#0d6dfd56,rgba(255, 255, 255, 0.337));
+
+    }
+    62%,100%{
+        background:rgba(220, 20, 60, 0.663) ;
+    }
+}
